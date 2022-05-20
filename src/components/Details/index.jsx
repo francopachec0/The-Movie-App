@@ -39,9 +39,9 @@ export const Details = () => {
                         </div>
                         <div className="col-8 text-center">
                             <h3 className='mt-4 text-center'>Fecha de Estréno {movieDetail.release_date}</h3>
-                            <h5 className='text-center'>{movieDetail.genres.map(g => g.name + " ")}</h5>
+                            <h5 className='text-center text-primary'>{movieDetail.genres.map(g => g.name + " ")}</h5>
                             <h4 className='mt-4'>{movieDetail.overview}</h4>
-                            <h5 className='mt-4 text-center'>Calificación {movieDetail.vote_average}</h5>
+                            <h5 className='mt-4 text-center text-warning'>Calificación {movieDetail.vote_average}</h5>
                             <div className="d-flex justify-content-center">
                                 <Link to={'/home'} className="btn btn-secondary mt-3 mb-2">Volver</Link>
                             </div>  

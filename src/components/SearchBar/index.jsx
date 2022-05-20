@@ -1,13 +1,20 @@
 import React from 'react'
 import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+
 
 const SearchBar = () => {
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const keyword = e.currentTarget.keyword.value
-        if (keyword.length === 0) {
+        if (keyword.length === 0 || keyword.length < 3) {
             toast.error("Please write something.")
+        } else {
+            e.currentTarget.keyword.value = '';
+            navigate(`/results?keyword=${keyword}`)
         }
     }
 
